@@ -1,4 +1,4 @@
-# Machine Learning Experiments – RCA
+# Rca - CIE 2 ACTIVITY
 
 ## About the Project
 
