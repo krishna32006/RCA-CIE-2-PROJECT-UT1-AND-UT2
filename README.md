@@ -1,92 +1,115 @@
-# CIE2 RCA UT1 Project – Diabetes Dataset Analysis
+# California Housing Price Prediction using Linear Regression
 
-## About the Project
-
-This project focuses on Exploratory Data Analysis (EDA) and Regression Model Development using the Diabetes dataset available in Scikit-learn.
-
-The project uses Random Forest Regression to predict diabetes disease progression and evaluates the model's performance.
-
-## Objective
-
-To perform data exploration and develop a Random Forest Regression model using the Diabetes dataset.
+## Project Overview
+This project predicts California house prices using the California Housing Prices dataset from Kaggle. It uses Multiple Linear Regression, Ridge Regression, and Lasso Regression to train and compare different regression models.
 
 ## Dataset
+- **Dataset Name:** California Housing Prices
+- **Source:** Kaggle
+- **Dataset:** `camnugent/california-housing-prices`
+- **Rows:** Approximately 20,640
+- **Target Variable:** `median_house_value`
 
-- Dataset Name: Diabetes Dataset
-- Source: Scikit-learn
-- Type: Regression Dataset
-- Target Variable: Disease_Progression
+## Objectives
+1. Load the California Housing dataset using KaggleHub.
+2. Perform data understanding and exploratory data analysis (EDA).
+3. Handle missing values using median imputation.
+4. Inspect outliers using box plots.
+5. Perform feature engineering using ratio features.
+6. Encode categorical data using One-Hot Encoding.
+7. Split the dataset into training and testing sets.
+8. Apply feature scaling using StandardScaler.
+9. Train and compare Linear Regression, Ridge, and Lasso models.
+10. Evaluate model performance using regression metrics.
 
-## Technologies Used
-
+## Technologies and Libraries Used
 - Python
-- Jupyter Notebook
+- Jupyter Notebook / Google Colab
 - Pandas
 - NumPy
 - Matplotlib
 - Seaborn
 - Scikit-learn
+- KaggleHub
 
-## Experiment Workflow
+## Project Workflow
 
-### 1. Import Libraries
-Import the required Python libraries for data analysis, visualization and machine learning.
+### 1. Data Loading
+Loaded the California Housing Prices dataset from Kaggle using KaggleHub.
 
-### 2. Load Dataset
-Load the Diabetes dataset using Scikit-learn and convert it into a Pandas DataFrame.
+### 2. Data Cleaning
+- Checked missing values and duplicate records.
+- Replaced missing values in `total_bedrooms` with the median.
 
-### 3. Data Understanding
-- Display the first few records.
-- Check dataset shape.
-- Check column information.
-- Generate descriptive statistics.
+### 3. Exploratory Data Analysis
+- Used statistical summaries.
+- Created box plots to inspect outliers.
+- Used a correlation heatmap.
+- Created scatter plots to understand relationships between features and house prices.
 
-### 4. Exploratory Data Analysis (EDA)
-- Analyze the dataset.
-- Check correlation between features.
-- Visualize data using graphs.
-- Use box plots to observe outliers.
+### 4. Feature Engineering
+Created three new features:
+- `rooms_per_household`
+- `bedrooms_per_room`
+- `population_per_household`
 
 ### 5. Data Preprocessing
-Prepare the dataset for machine learning model development.
+- Applied One-Hot Encoding to `ocean_proximity`.
+- Used an 80:20 train-test split.
+- Applied StandardScaler to scale the features.
 
-### 6. Train-Test Split
-Split the dataset into:
-- 80% Training Data
-- 20% Testing Data
+### 6. Model Training
+Implemented and compared three models:
+- Multiple Linear Regression (OLS)
+- Ridge Regression (L2 Regularization)
+- Lasso Regression (L1 Regularization)
 
-### 7. Model Development
-
-**Algorithm:** Random Forest Regressor
-
-Model Parameters:
-- n_estimators = 200
-- max_depth = 5
-- min_samples_split = 4
-- random_state = 42
-
-### 8. Model Evaluation
-
-Evaluate the model using the following metrics:
-
-- MAE (Mean Absolute Error)
-- MSE (Mean Squared Error)
-- RMSE (Root Mean Squared Error)
+### 7. Model Evaluation
+Evaluated models using:
 - R² Score
+- Mean Absolute Error (MAE)
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+- Mean Absolute Percentage Error (MAPE)
+- 5-Fold Cross Validation
 
-### 9. Baseline Model Comparison
-
-Use Dummy Regressor as a baseline model and compare its performance with the Random Forest Regressor.
-
-### 10. Data Visualization
-
-Generate the following visualizations:
-
+### 8. Visualization
+Created diagnostic plots:
 - Actual vs Predicted Values
-- Feature Importance Graph
+- Residuals vs Fitted Values
+- Residual Distribution
+- Feature Coefficients
 
-## Project Structure
+## Important Findings
+- Median income is a strong positive predictor of house prices.
+- Location-related features influence house prices.
+- Ridge and Lasso regularization help control the effects of multicollinearity.
+- The three regression models are compared to understand their performance.
 
+## How to Run the Project
+
+1. Download or clone this repository.
+2. Open the notebook in Jupyter Notebook or Google Colab.
+3. Install the required libraries:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn kagglehub
+```
+
+4. Run the notebook cells from top to bottom.
+5. Make sure you have access to Kaggle to download the dataset through KaggleHub.
+
+## Project File
+
+`RCA_PROJECT_1_Linear_Regression.ipynb`
+
+## Conclusion
+This project demonstrates the complete machine learning workflow for predicting California house prices using Linear Regression and regularization techniques. It includes data preprocessing, feature engineering, model training, evaluation, cross-validation, and visualization.
+
+---
+**Project Type:** Machine Learning – Regression  
+**Dataset:** California Housing Prices  
+**Language:** Python
 ```text
 CIE2-RCA-UT1-Project/
 │
